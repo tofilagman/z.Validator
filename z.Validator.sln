@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "z.Validator", "z.Validator.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "z.Validator.Test", "Tests\z.Validator.Test.csproj", "{F5D3E53B-DE0D-416E-B65C-6AF5DC1B0AA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "z.ServiceProvider", "..\z.ServiceProvider\z.ServiceProvider.csproj", "{CA451597-5CD0-4EC0-AB61-9D8AA12E5382}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{F5D3E53B-DE0D-416E-B65C-6AF5DC1B0AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5D3E53B-DE0D-416E-B65C-6AF5DC1B0AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5D3E53B-DE0D-416E-B65C-6AF5DC1B0AA7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA451597-5CD0-4EC0-AB61-9D8AA12E5382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA451597-5CD0-4EC0-AB61-9D8AA12E5382}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA451597-5CD0-4EC0-AB61-9D8AA12E5382}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA451597-5CD0-4EC0-AB61-9D8AA12E5382}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

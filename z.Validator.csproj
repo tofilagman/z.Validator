@@ -16,10 +16,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="z.Data.Standard" Version="1.2.16" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\z.ServiceProvider\z.ServiceProvider.csproj" />
+    <PackageReference Include="z.ServiceProvider" Version="1.0.1" />
   </ItemGroup>
 
 </Project>
