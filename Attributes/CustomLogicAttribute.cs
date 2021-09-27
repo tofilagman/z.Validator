@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace z.Validator.Attributes
 {
+    [Obsolete("Use Throwable instead")]
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Class, AllowMultiple = true)]
     public class CustomLogicAttribute : BaseValidationAttribute
     {

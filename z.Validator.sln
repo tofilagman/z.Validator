@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "z.Validator", "z.Validator.csproj", "{3511078D-0AC9-42B0-B064-B8F2F55F452A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "z.Validator.Test", "Tests\z.Validator.Test.csproj", "{F5D3E53B-DE0D-416E-B65C-6AF5DC1B0AA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "z.ServiceProvider", "..\z.ServiceProvider\z.ServiceProvider.csproj", "{CA451597-5CD0-4EC0-AB61-9D8AA12E5382}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{3511078D-0AC9-42B0-B064-B8F2F55F452A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3511078D-0AC9-42B0-B064-B8F2F55F452A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3511078D-0AC9-42B0-B064-B8F2F55F452A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5D3E53B-DE0D-416E-B65C-6AF5DC1B0AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5D3E53B-DE0D-416E-B65C-6AF5DC1B0AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5D3E53B-DE0D-416E-B65C-6AF5DC1B0AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5D3E53B-DE0D-416E-B65C-6AF5DC1B0AA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA451597-5CD0-4EC0-AB61-9D8AA12E5382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA451597-5CD0-4EC0-AB61-9D8AA12E5382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA451597-5CD0-4EC0-AB61-9D8AA12E5382}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA451597-5CD0-4EC0-AB61-9D8AA12E5382}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,6 +11,6 @@ namespace z.Validator
     /// <typeparam name="T"></typeparam>
     public interface IAutoUniqueValidator<T> where T : class
     {
-        bool IsUnique(T obj, string member);
-    }
+        Task<bool> IsUnique(T obj, string member);
+    } 
 }

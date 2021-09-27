@@ -9,6 +9,8 @@ namespace z.Validator.Attributes
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter)]
     public class IsRequiredAttribute : BaseValidationAttribute
     {
+        public int numericValue = 0;
+
         public IsRequiredAttribute()
         {
             Key = "ValueRequired";
@@ -23,12 +25,12 @@ namespace z.Validator.Attributes
 
             if (typeof(int) == value.GetType())
                 if (int.TryParse(value.ToString(), out int s))
-                    if (s <= 0)
+                    if (s <= numericValue)
                         return CreateValidationErrorResult(validationContext);
 
             if (typeof(long) == value.GetType())
                 if (long.TryParse(value.ToString(), out long s))
-                    if (s <= 0)
+                    if (s <= numericValue)
                         return CreateValidationErrorResult(validationContext);
 
             return ValidationResult.Success;

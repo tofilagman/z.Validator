@@ -1,6 +1,7 @@
 ﻿using z.ServiceProvider;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 
 namespace z.Validator.Attributes
 {
@@ -31,8 +32,8 @@ namespace z.Validator.Attributes
                 throw new ArgumentNullException(
                     $"Service type {serviceType.Name} does not contain a method named {MethodName} with arguments of type {objInstanceType} and string");
             try
-            {
-                method.Invoke(service, new[] { validationContext.ObjectInstance, validationContext.MemberName });
+            { 
+                MethodInvoker(method, service, validationContext);
                 return ValidationResult.Success;
             }
             catch (Exception ex)

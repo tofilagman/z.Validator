@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using z.Data;
 
 namespace z.Validator.Attributes
@@ -32,5 +33,17 @@ namespace z.Validator.Attributes
             else
                 return ValidationResult.Success;
         }
+
+        protected void MethodInvoker(MethodInfo method, object service, ValidationContext validationContext)
+        {
+            if (method.ReturnType == typeof(Task))
+            {
+                var tsk = (Task)method.Invoke(service, new[] { validationContext.ObjectInstance, validationContext.MemberName });
+                tsk.GetAwaiter().GetResult();
+            }
+            else
+                method.Invoke(service, new[] { validationContext.ObjectInstance, validationContext.MemberName });
+        }
+         
     }
 }

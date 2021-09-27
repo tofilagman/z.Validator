@@ -2,6 +2,7 @@
 using z.ServiceProvider;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 
 namespace z.Validator.Attributes
 {
@@ -28,9 +29,9 @@ namespace z.Validator.Attributes
                 throw new ArgumentNullException(
                     $"Service type {serviceType.Name} does not contain a method named {methodname}");
 
-            var isUnique = (bool)method.Invoke(service, new[] { validationContext.ObjectInstance, validationContext.MemberName });
+            var tsk = (Task<bool>)method.Invoke(service, new[] { validationContext.ObjectInstance, validationContext.MemberName });
 
-            if (isUnique)
+            if (tsk.GetAwaiter().GetResult())
                 return ValidationResult.Success;
 
             ErrorMessage = "The field {0} is already exists";
