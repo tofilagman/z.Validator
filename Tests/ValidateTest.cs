@@ -21,13 +21,13 @@ namespace z.Validator.Test
             {
                 services.AddHttpContextAccessor();
                 services.AddSingleton<IServiceProviderProxy, HttpContextServiceProviderProxy>();
-                
+
                 services.AddScoped<SampleService>();
                 services.AddScoped<IThrowableValidator<TestThrowableToken>, SampleService>();
                 services.AddScoped<IThrowableValidator<TestAsyncToken>, SampleService>();
                 services.AddScoped<IAutoUniqueValidator<UniqueToken>, SampleService>();
             });
-             
+
             Provider = builder.Build();
 
             ServiceLocator.Initialize(Provider.Services.GetService<IServiceProviderProxy>());
@@ -59,12 +59,12 @@ namespace z.Validator.Test
             };
 
             var exception = Assert.ThrowsAsync<ModelValidationException>(async () =>
-          {
-              await serv.TestAsync(token);
-          });
+         {
+             await serv.TestAsync(token);
+         });
 
             Assert.AreEqual(1, exception.Results.Count);
-
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -76,7 +76,7 @@ namespace z.Validator.Test
             {
                 LastName = "Penduko"
             };
-             
+
             var res = await serv.TestThrowableAsync(token);
 
 
@@ -99,7 +99,7 @@ namespace z.Validator.Test
             });
 
             Assert.AreEqual(1, exception.Results.Count);
-
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -134,7 +134,7 @@ namespace z.Validator.Test
             });
 
             Assert.AreEqual(1, exception.Results.Count);
-
+            await Task.CompletedTask;
         }
 
         [Test]
@@ -148,7 +148,7 @@ namespace z.Validator.Test
             };
 
             var res = await serv.TestUnique(token);
-             
+
             Assert.AreEqual(res.LastName, token.LastName);
 
         }

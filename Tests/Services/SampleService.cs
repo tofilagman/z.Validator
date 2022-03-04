@@ -15,13 +15,13 @@ namespace z.Validator.Test.Services
         {
             ValidateToken(token);
 
-            return token;
+            return await Task.FromResult( token);
         }
 
         public async Task<TestThrowableToken> TestThrowableAsync(TestThrowableToken token)
         {
             ValidateToken(token);
-            return token;
+            return await Task.FromResult(token);
         }
 
         public void ValidateLastName(TestThrowableToken token, string name)
@@ -35,7 +35,7 @@ namespace z.Validator.Test.Services
         public async Task<TestAsyncToken> TestAsyncronousValidation(TestAsyncToken token)
         {
             ValidateToken(token);
-            return token;
+            return await Task.FromResult(token);
         }
 
         public async Task ValidateAsyncLastName(TestAsyncToken token, string name)
@@ -51,7 +51,7 @@ namespace z.Validator.Test.Services
         public async Task<UniqueToken> TestUnique(UniqueToken token)
         {
             ValidateToken(token);
-            return token;
+            return await Task.FromResult(token);
         }
          
         public async Task<bool> IsUnique(UniqueToken obj, string member)
